@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coin Flip Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>🪙 Coin Flip Lab</h1>
+      <p class="sub">Fair by default. Learn the odds. Ship the code.</p>
+    </header>
+
+    <section class="stage">
+      <!-- the “coin” is just a div with two faces -->
+      <div class="coin" id="coin" aria-live="polite" aria-label="coin">
+        <div class="face heads" aria-hidden="true">HEADS</div>
+        <div class="face tails" aria-hidden="true">TAILS</div>
+      </div>
+      <div class="result" id="result" aria-live="polite">—</div>
+    </section>
+
+    <section class="controls">
+      <button id="flipBtn" class="primary">Flip (Space)</button>
+      <button id="multiBtn" class="secondary">Flip ×10</button>
+
+      <div class="loaded-row">
+        <label class="switch">
+          <input id="loadedToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <div class="loaded-meta">
+          <strong>Loaded mode</strong>
+          <small>(Heads chance)</small>
+          <input id="bias" type="range" min="0" max="100" value="50" />
+          <span id="biasVal">50%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="label">Heads</div>
+        <div class="value" id="headsCount">0</div>
+      </div>
+      <div class="stat">
+        <div class="label">Tails</div>
+        <div class="value" id="tailsCount">0</div>
+      </div>
+      <div class="stat">
+        <div class="label">Total</div>
+        <div class="value" id="totalCount">0</div>
+      </div>
+      <div class="stat">
+        <div class="label">Heads %</div>
+        <div class="value" id="headsPct">0%</div>
+      </div>
+      <div class="stat">
+        <div class="label">Longest Streak</div>
+        <div class="value" id="streak">—</div>
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>History</h2>
+      <ol id="history" reversed></ol>
+    </section>
+
+    <footer class="footer">
+      <button id="resetBtn" class="danger">Reset</button>
+      <button id="exportBtn" class="ghost">Export CSV</button>
+      <a id="shareBtn" class="ghost" href="#" hidden>Share</a>
+      <p class="tip">
+        Tip: Flip with <kbd>Space</kbd>, flip ×10 with <kbd>Enter</kbd>.
+      </p>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
