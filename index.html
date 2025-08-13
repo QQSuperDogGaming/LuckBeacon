@@ -3,22 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LuckBeacon</title>
+  <title>Luck Beacon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app">
     <header class="topbar">
-      <h1>LuckBeacon</h1>
-      <p class="sub">Fair by default. Learn the odds. Ship the code.</p>
+      <h1>Luck Beacom</h1>
+      <p class="sub">Now with a real 3D coin. UI stays HTML/CSS.</p>
     </header>
 
     <section class="stage">
-      <!-- the “coin” is just a div with two faces -->
-      <div class="coin" id="coin" aria-live="polite" aria-label="coin">
-        <div class="face heads" aria-hidden="true">HEADS</div>
-        <div class="face tails" aria-hidden="true">TAILS</div>
-      </div>
+      <!-- 3D coin canvas lives here -->
+      <canvas id="coinCanvas" aria-label="3D coin" aria-live="polite"></canvas>
       <div class="result" id="result" aria-live="polite">—</div>
     </section>
 
@@ -41,26 +38,11 @@
     </section>
 
     <section class="stats">
-      <div class="stat">
-        <div class="label">Heads</div>
-        <div class="value" id="headsCount">0</div>
-      </div>
-      <div class="stat">
-        <div class="label">Tails</div>
-        <div class="value" id="tailsCount">0</div>
-      </div>
-      <div class="stat">
-        <div class="label">Total</div>
-        <div class="value" id="totalCount">0</div>
-      </div>
-      <div class="stat">
-        <div class="label">Heads %</div>
-        <div class="value" id="headsPct">0%</div>
-      </div>
-      <div class="stat">
-        <div class="label">Longest Streak</div>
-        <div class="value" id="streak">—</div>
-      </div>
+      <div class="stat"><div class="label">Heads</div><div class="value" id="headsCount">0</div></div>
+      <div class="stat"><div class="label">Tails</div><div class="value" id="tailsCount">0</div></div>
+      <div class="stat"><div class="label">Total</div><div class="value" id="totalCount">0</div></div>
+      <div class="stat"><div class="label">Heads %</div><div class="value" id="headsPct">0%</div></div>
+      <div class="stat"><div class="label">Longest Streak</div><div class="value" id="streak">—</div></div>
     </section>
 
     <section class="history">
@@ -72,12 +54,11 @@
       <button id="resetBtn" class="danger">Reset</button>
       <button id="exportBtn" class="ghost">Export CSV</button>
       <a id="shareBtn" class="ghost" href="#" hidden>Share</a>
-      <p class="tip">
-        Tip: Flip with <kbd>Space</kbd>, flip ×10 with <kbd>Enter</kbd>.
-      </p>
+      <p class="tip">Tip: Flip with <kbd>Space</kbd>, flip ×10 with <kbd>Enter</kbd>.</p>
     </footer>
   </main>
 
-  <script src="script.js" defer></script>
+  <!-- Your app logic -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
